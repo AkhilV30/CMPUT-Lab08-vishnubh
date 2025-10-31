@@ -1,10 +1,15 @@
 package com.example.lab08;
 
 import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * CustomList manages a list of City objects.
+ * Initially, it can add new cities but does not yet
+ * include the hasCity(), deleteCity(), or countCities() methods.
+ */
 public class CustomList {
-    private List<City> cities;
+
+    private ArrayList<City> cities = new ArrayList<>();
 
     public CustomList() {
         this.cities = new ArrayList<>();
@@ -13,11 +18,4 @@ public class CustomList {
     public void addCity(City city) {
         cities.add(city);
     }
-
-    
-
-    // Will be implemented later using TDD (leave blank for now)
-    // public boolean hasCity(City city) { ... }
-    // Testing CI
 }
-
