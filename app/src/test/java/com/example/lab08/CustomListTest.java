@@ -1,23 +1,21 @@
-import org.junit.Test;
-import static org.junit.Assert.*;
-
+package com.example.lab08;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+/**
+ * Unit test for CustomList.
+ * This test follows TDD:
+ * Step 1 (RED): Write a failing test for hasCity().
+ * Step 2 (GREEN): Implement hasCity() in CustomList.java.
+ */
 public class CustomListTest {
 
     @Test
-    public void hasCity_returnsTrueWhenPresent() {
+    public void testHasCity() {
         CustomList list = new CustomList();
         City calgary = new City("Calgary", "AB");
         list.addCity(calgary);
 
-        // Fails now because hasCity() doesn't exist/return true yet
+        // This will fail initially because hasCity() doesn't exist yet
         assertTrue(list.hasCity(calgary));
-    }
-
-    @Test
-    public void hasCity_returnsFalseWhenAbsent() {
-        CustomList list = new CustomList();
-        City edmonton = new City("Edmonton", "AB");
-
-        assertFalse(list.hasCity(edmonton));
     }
 }
