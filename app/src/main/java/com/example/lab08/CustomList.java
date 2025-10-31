@@ -39,4 +39,7 @@ public class CustomList {
     }
 
     /** Returns the total number of cities in the list */
+    public int countCities() {
+        return cities.size();
+    }
 }
