@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 /**
  * CustomList manages a list of City objects.
- * Initially, it could only add new cities.
- * Now, after implementing TDD (GREEN phase),
- * it includes the hasCity() method.
+ * Initially, it can add new cities and now includes:
+ * - hasCity()
+ * - deleteCity()
+ * - countCities()
  */
 public class CustomList {
 
@@ -16,16 +17,29 @@ public class CustomList {
         this.cities = new ArrayList<>();
     }
 
+    /** Adds a city to the list */
     public void addCity(City city) {
         cities.add(city);
     }
 
-    /**
-     * Checks if the given city exists in the list.
-     * @param city the City object to check
-     * @return true if the city exists, false otherwise
-     */
+    /** Checks whether the given city exists in the list */
     public boolean hasCity(City city) {
         return cities.contains(city);
+    }
+
+    /** Deletes the given city from the list.
+     *  Throws an exception if the city does not exist.
+     */
+    public void deleteCity(City city) {
+        // Try to remove; if not found, throw an error
+        boolean removed = cities.remove(city);
+        if (!removed) {
+            throw new IllegalArgumentException("City not found in the list");
+        }
+    }
+
+    /** Returns the total number of cities in the list */
+    public int countCities() {
+        return cities.size();
     }
 }
